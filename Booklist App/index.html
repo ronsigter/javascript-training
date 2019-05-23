@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <title>My Booklist App</title>
+</head>
+<body>
+
+  <div class="w3-container">
+    <div id="book-modal" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('book-modal').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        </div>
+        <form id="modal-form" class="w3-container">
+          <div class="w3-section">
+            <label><b>ISBN</b></label>
+            <input id="modal-isbn" class="form-control" type="text" name="usrname">
+            <label><b>Title</b></label>
+            <input id="modal-title" class="form-control" type="text" name="usrname">
+            <label><b>Author</b></label>
+            <input id="modal-author" class="form-control" type="text" name="usrname">
+            <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Save</button>
+          </div>
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('book-modal').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "container mt-4">
+    <h1 class = "display-4 text-center">
+      <i class="fas fa-book-open text-primary"></i>
+      My<span class = "text-primary">Book</span>List
+    </h1>
+    <form id="book-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" id="author" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="isbn">ISBN#</label>
+        <input type="text" id="isbn" class="form-control">
+      </div>
+      <input type="submit" value="Add Book" class="btn btn-primary btn-block">
+    </form>
+    <table class="table table-striped mt-5">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN#</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-list"></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
